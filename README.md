@@ -21,7 +21,10 @@ According to my knowledge, the **Guide** is similar or maybe identical over the 
 The Format Setting of this template
 ------------------
 
-Simple fact: **the format of the thesis content is free. Only several pages should be formatted according to the guide. And the sequence matters.**
+Simple fact: 
++ **The format of the thesis content is free.**
++  **Only several pages should be formatted according to the guide. **
++  **The sequence matters.**
 
 Detailed List (The bold were implemented in the example)
 
