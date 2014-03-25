@@ -1,0 +1,156 @@
+% **************************************************
+% Document Class Definition
+% **************************************************
+\documentclass[%
+	paper=A4,					% paper size --> A4 is default in Germany
+	twoside=true,				% onesite or twoside printing
+	openright,					% doublepage cleaning ends up right side
+	parskip=full,				% spacing value / method for paragraphs
+	chapterprefix=true,			% prefix for chapter marks
+	12pt,						% font size
+	headings=normal,			% size of headings
+	bibliography=totoc,			% include bib in toc
+	listof=totoc,				% include listof entries in toc
+	titlepage=on,				% own page for each title page
+	captions=tableabove,		% display table captions above the float env
+	draft=false,				% value for draft version
+]{scrreprt}%
+
+% **************************************************
+% Debug LaTeX Information
+% **************************************************
+%\listfiles
+
+% **************************************************
+% Information and Commands for Reuse
+% **************************************************
+\newcommand{\thesisTitle}{Thesis Title}
+\newcommand{\thesisName}{Thesis Author}
+\newcommand{\thesisSubject}{Thesis Subject}
+\newcommand{\thesisDate}{March 2014}
+\newcommand{\thesisVersion}{0.1}
+
+\newcommand{\thesisFirstReviewer}{First Reviewer}
+\newcommand{\thesisFirstReviewerUniversity}{\protect{The Hong Kong Polytechnic University}}
+\newcommand{\thesisFirstReviewerDepartment}{Department of Computing}
+
+\newcommand{\thesisSecondReviewer}{Second Reviewer}
+\newcommand{\thesisSecondReviewerUniversity}{\protect{The Hong Kong Polytechnic University}}
+\newcommand{\thesisSecondReviewerDepartment}{Department of Computing}
+
+\newcommand{\thesisFirstSupervisor}{Prof. John Doe}
+
+\newcommand{\thesisUniversity}{\protect{The Hong Kong Polytechnic University}}
+\newcommand{\thesisUniversityDepartment}{Department of Computing}
+\newcommand{\thesisUniversityInstitute}{Thesis Research Centre}
+\newcommand{\thesisUniversityCity}{Hong Kong}
+\newcommand{\thesisUniversityStreetAddress}{Hung Hom, Kowloon}
+
+
+% **************************************************
+% Load and Configure Packages
+% **************************************************
+\usepackage[utf8]{inputenc}		% defines file's character encoding
+\usepackage[english]{babel} % babel system, adjust the language of the content
+\usepackage[					% clean thesis style
+	figuresep=colon,%
+	sansserif=false,%
+	hangfigurecaption=false,%
+	hangsection=true,%
+	hangsubsection=true,%
+	colorize=full,%
+	colortheme=bluemagenta,%
+]{cleanthesis}
+
+\hypersetup{					% setup the hyperref-package options
+	pdftitle={\thesisTitle},	% 	- title (PDF meta)
+	pdfsubject={\thesisSubject},% 	- subject (PDF meta)
+	pdfauthor={\thesisName},	% 	- author (PDF meta)
+	plainpages=false,			% 	- 
+	colorlinks=false,			% 	- colorize links?
+	pdfborder={0 0 0},			% 	-
+	breaklinks=true,			% 	- allow line break inside links
+	bookmarksnumbered=true,		%
+	bookmarksopen=true			%
+}
+
+% **************************************************
+% Document CONTENT
+% **************************************************
+\begin{document}
+
+% --------------------------
+% rename document parts
+% --------------------------
+%\renewcaptionname{ngerman}{\figurename}{Abb.}
+%\renewcaptionname{ngerman}{\tablename}{Tab.}
+\renewcaptionname{english}{\figurename}{Fig.}
+\renewcaptionname{english}{\tablename}{Table}
+
+% --------------------------
+% Front matter
+% --------------------------
+\pagenumbering{roman}			% roman page numbing (invisible for empty page style)
+%\pagestyle{empty}				% no header or footers
+%\input{content/titlepages}		% INCLUDE: all titlepages
+%\cleardoublepage
+
+\thesistitlepage{Doctor of Philosophy}%{Temporary Binding for Examination Purposes}
+%\thesistitlepage{Master of Philosophy}%{Temporary Binding for Examination Purposes}
+\cleardoublepage
+
+
+\pagestyle{plain}				% display just page numbers
+\declaration
+\cleardoublepage
+
+\input{content/abstract}		% INCLUDE: the abstracts (english and german)
+\cleardoublepage
+%
+\input{content/acknowledgment} % INCLUDE: acknowledgment
+\cleardoublepage
+%
+\setcounter{tocdepth}{2}		% define depth of toc
+\tableofcontents				% display table of contents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+% --------------------------
+% Body matter
+% --------------------------
+\pagenumbering{arabic}			% arabic page numbering
+\setcounter{page}{1}			% set page counter
+\pagestyle{maincontentstyle} 	% fancy header and footer
+
+\input{content/chapter-introduction} % INCLUDE: introduction
+\input{content/chapter-literature-review} % INCLUDE: literature-review
+\input{content/chapter-system}	% INCLUDE: system
+\input{content/chapter-feature-extraction} % INCLUDE: feature extraction
+\input{content/chapter-real-time-system} % INCLUDE: real time system
+\input{content/chapter-conclusions} % INCLUDE: conclusion
+\cleardoublepage
+
+% --------------------------
+% Back matter
+% --------------------------
+{%
+\setstretch{1.1}
+\renewcommand{\bibfont}{\normalfont\small}
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+\nocite{*}
+\printbibliography[title={References},nottype=online]
+\printbibliography[heading=subbibliography,title={Websites},type=online,prefixnumbers={@}]
+}
+\cleardoublepage
+
+
+% **************************************************
+% End of Document CONTENT
+% **************************************************
+\end{document}

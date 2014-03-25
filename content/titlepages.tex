@@ -1,0 +1,82 @@
+% !TEX root = ../thesis_phd.tex
+%
+% ------------------------------------  --> cover title page
+\begin{titlepage}
+	\pdfbookmark[0]{Cover}{Cover}
+	\flushright
+	\hfill
+	\vfill
+	{\LARGE\thesisTitle} \par
+	\rule[5pt]{\textwidth}{.4pt} \par
+	{\Large\thesisName}
+	\vfill
+	\textit{\large\thesisDate} \\
+	Version: \thesisVersion
+\end{titlepage}
+
+
+% ------------------------------------  --> main title page
+\begin{titlepage}
+	\pdfbookmark[0]{Titlepage}{Titlepage}
+	\tgherosfont
+	\centering
+	
+	{\Large \thesisUniversity} \\[4mm]
+	\includegraphics[width=6cm]{gfx/PolyU_Logo_CMKY} \\[2mm]
+	\textsf{\thesisUniversityDepartment} \\
+	\textsf{\thesisUniversityInstitute} \\
+	%\textsf{\thesisUniversityGroup} \\
+	
+	\vfill
+	{\large \thesisSubject} \\[5mm]
+	{\LARGE \color{ctcolormain}\textbf{\thesisTitle} \\[10mm]}
+	{\Large \thesisName} \\
+	
+	\vfill
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{1. Reviewer}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		{\Large \thesisFirstReviewer} \\
+	  	{\small \thesisFirstReviewerDepartment} \\[-1mm]
+		{\small \thesisFirstReviewerUniversity}
+	\end{minipage} \\[5mm]
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{2. Reviewer}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		{\Large \thesisSecondReviewer} \\
+	  	{\small \thesisSecondReviewerDepartment} \\[-1mm]
+		{\small \thesisSecondReviewerUniversity}
+	\end{minipage} \\[10mm]
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{Supervisor}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		\thesisFirstSupervisor%\ and \thesisSecondSupervisor
+	\end{minipage} \\[10mm]
+	
+	\thesisDate \\
+	
+\end{titlepage}
+
+
+% ------------------------------------  --> lower title back for single page layout
+\hfill
+\vfill
+\small
+\textbf{\thesisName} \\
+\textit{\thesisTitle} \\
+\thesisSubject, \thesisDate \\
+Reviewers: \thesisFirstReviewer\ and \thesisSecondReviewer \\
+Supervisor: \thesisFirstSupervisor \\[1.5em]
+\textbf{\thesisUniversity} \\
+\textit{\thesisUniversityInstitute} \\
+\thesisUniversityDepartment \\
+\thesisUniversityStreetAddress, \thesisUniversityCity
