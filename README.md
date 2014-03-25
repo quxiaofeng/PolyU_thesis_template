@@ -1,12 +1,12 @@
 PolyU Thesis Template
 =====================
 
-This template is a simple modification based on [the Clean **Thesis** package](http://cleanthesis.der-ric.de/).
+This template is a simple modification of [the Clean **Thesis** package](http://cleanthesis.der-ric.de/).
 
 Usage
 -----
 
-+ Edit the `thesis.tex` for making title page and organize the thesis structure.
++ Edit the `thesis.tex` for making title page and organizing the thesis structure.
 + Add/Edit each chapter in the `content` folder
 + Replace/Add references to `bib-refs.bib`
 + Compile as usual
@@ -14,7 +14,7 @@ Usage
 The Guide
 ---------
 
-This package follows the **Guide** (guide/thesis_format_guide.pdf) of thesis formatting of Department of Computing of the Hong Kong Polytechnic University. 
+This package follows the **Guide** (`guide/thesis_format_guide.pdf`) of thesis formatting of Department of Computing of the Hong Kong Polytechnic University. 
 
 According to my knowledge, the **Guide** is similar or maybe identical over the years. However this **Guide** is printed for each graduate only when he/she is going to take the viva. The name of the RC secretary of corresponding department was printed on the **Guide**. The attached **Guide** is a version free of the names and contacts of the RC secretary.
 
@@ -37,10 +37,10 @@ Detailed List (The bold were implemented in the example)
 + **The thesis body**
 + **Conclusions and Suggestions for Future Research (the latter being optional)**
 + Appendices (optional)
-+ References
++ **References**
     + The references for all chapters can be placed at the end, or those for each chapter can be placed at the end of the chapter.
 
 [About Clean **Thesis** Package](http://cleanthesis.der-ric.de/)
 ----------------------------------------------------------------
 
-The version of Clean **Thesis** used here is not updated. The guide of the clean thesis package is included in the guide folder.
+The version of Clean **Thesis** used here is not updated. The guide of the clean thesis package is included in the `guide` folder.
