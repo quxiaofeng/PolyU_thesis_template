@@ -23,7 +23,7 @@ The Format Setting of this template
 
 Simple fact: 
 + **The format of the thesis content is free.**
-+  **Only several pages should be formatted according to the guide. **
++  **Only several pages should be formatted according to the guide.**
 +  **The sequence matters.**
 
 Detailed List (The bold were implemented in the example)
