@@ -17,6 +17,12 @@
 ]{scrreprt}%
 
 % **************************************************
+% Fix for Legacy commands found in template
+% **************************************************
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+
+% **************************************************
 % Debug LaTeX Information
 % **************************************************
 %\listfiles
