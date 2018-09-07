@@ -436,6 +436,12 @@
 % TODO command
 \definecolor{color_todo}{rgb}{.6,.8,.2}
 \newcommand{\TODO}[1]{{\color{color_todo}\textbf{[TODO #1]}}}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 %
 %
 % ref commands, e.g. for images, tables and text labels
@@ -689,6 +695,44 @@
 % requirements of the Hong Kong Polytechnic University.
 % For usage example, see thesis.tex.
 %
+\newcommand{\thesiscoverpage}[2]{%
+  \pdfbookmark[0]{Cover Page}{Cover Page}
+  \label{sec:titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+   
+  \vspace*{3.5cm}
+  \renewcommand{\baselinestretch}{1.0}%
+  \textbf{\LARGE {\MakeUppercase{\thesisTitle}}}
+ 
+ 
+ 
+    \renewcommand{\baselinestretch}{1.0}%
+  \textbf{\LARGE  {\MakeUppercase{\thesisName}}}
+ 
+  
+   \textbf{\LARGE {{#1}}}
+   
+   
+   
+     \renewcommand{\baselinestretch}{3.0}%
+  \textbf{\LARGE {\thesisUniversity}}
+  \vspace{0.5cm}
+  
+ 
+  \textbf{\LARGE {\thesisYear}}
+
+	
+  \end{center}
+  \addtocounter{page}{-1}%Do not include in page count
+
+  \afterpage{\blankpage}
+\pagebreak
+  
+ 
+
+}
+
 \newcommand{\thesistitlepage}[2]{%
   \pdfbookmark[0]{Title Page}{Title Page}
   \label{sec:titlepage}
