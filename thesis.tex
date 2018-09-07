@@ -17,6 +17,12 @@
 ]{scrreprt}%
 
 % **************************************************
+% Fix for Legacy commands found in template
+% **************************************************
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+
+% **************************************************
 % Debug LaTeX Information
 % **************************************************
 %\listfiles
@@ -27,7 +33,9 @@
 \newcommand{\thesisTitle}{Thesis Title}
 \newcommand{\thesisName}{Thesis Author}
 \newcommand{\thesisSubject}{Thesis Subject}
-\newcommand{\thesisDate}{March 2014}
+\newcommand{\thesisMonth}{September}
+\newcommand{\thesisYear}{2018}
+\newcommand{\thesisDate}{\thesisMonth \xspace \thesisYear}
 \newcommand{\thesisVersion}{0.1}
 
 \newcommand{\thesisFirstReviewer}{First Reviewer}
@@ -62,6 +70,8 @@
 	colortheme=bluemagenta,%
 ]{cleanthesis}
 
+\usepackage{afterpage} %used for inserting blank pages etc
+
 \hypersetup{					% setup the hyperref-package options
 	pdftitle={\thesisTitle},	% 	- title (PDF meta)
 	pdfsubject={\thesisSubject},% 	- subject (PDF meta)
@@ -94,8 +104,10 @@
 %\pagestyle{empty}				% no header or footers
 %\input{content/titlepages}		% INCLUDE: all titlepages
 %\cleardoublepage
-
-\thesistitlepage{Doctor of Philosophy}%{Temporary Binding for Examination Purposes}
+\thesiscoverpage{PhD}%{Temporary Binding for Examination Purposes}
+%\thesiscoverpage{MPhil}%{Temporary Binding for Examination Purposes}
+\cleardoublepage
+\thesistitlepage{Doctor of Philosophy}{Temporary Binding for Examination Purposes}
 %\thesistitlepage{Master of Philosophy}%{Temporary Binding for Examination Purposes}
 \cleardoublepage
 
@@ -111,6 +123,7 @@
 \cleardoublepage
 %
 \setcounter{tocdepth}{2}		% define depth of toc
+\renewcommand{\contentsname}{Table of contents}
 \tableofcontents				% display table of contents
 \cleardoublepage
 

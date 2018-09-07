@@ -289,7 +289,7 @@
 \RequirePackage[					% use biblatex for bibliography
 	backend=\cthesis@bibsys,		% 	- use biber backend (bibtex replacement) or bibtex
 	bibencoding=utf8,				% 	- use auto file encode
-	style=alphabetic,				% 	- use alphabetic (or numeric) bib style
+	style=numeric,				% 	- use alphabetic (or numeric) bib style
 	natbib=true,					% 	- allow natbib commands
 	hyperref=true,					% 	- activate hyperref support
 	backref=true,					% 	- activate backrefs
@@ -436,47 +436,54 @@
 % TODO command
 \definecolor{color_todo}{rgb}{.6,.8,.2}
 \newcommand{\TODO}[1]{{\color{color_todo}\textbf{[TODO #1]}}}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 %
 %
 % ref commands, e.g. for images, tables and text labels
 % --------------------------------------------------
 % RESULT = (siehe Tab. 12.4)
-\newcommand{\tabref}[1]{(siehe Tab.~\ref{#1})}
+\usepackage[plain]{fancyref} %replaced below for existing package with English language
+%\newcommand{\tabref}[1]{(siehe Tab.~\ref{#1})}
 %
 % RESULT = (siehe Tab. 12.4)
-\newcommand{\tableref}[1]{(siehe Tab.~\ref{#1} Seite~\pageref{#1})}
+%\newcommand{\tableref}[1]{(siehe Tab.~\ref{#1} Seite~\pageref{#1})}
 %
 % --------------------------------------------------
 % RESULT = (siehe 3.4)
-\newcommand{\tref}[1]{(siehe \ref{#1})}
+%\newcommand{\tref}[1]{(siehe \ref{#1})}
 %
 % RESULT = Abschnitt 3.4
-\newcommand{\treft}[1]{Abschnitt~\ref{#1}}
+%\newcommand{\treft}[1]{Abschnitt~\ref{#1}}
 %
 % RESULT = (siehe 3.4, Seite 12)
-\newcommand{\textref}[1]{(siehe \ref{#1}, Seite~\pageref{#1})}
+%\newcommand{\textref}[1]{(siehe \ref{#1}, Seite~\pageref{#1})}
 %
 % RESULT = Abschnitt 3.4 (siehe Seite 12)
-\newcommand{\textreft}[1]{Abschnitt~\ref{#1} (siehe Seite~\pageref{#1})}
+%\newcommand{\textreft}[1]{Abschnitt~\ref{#1} (siehe Seite~\pageref{#1})}
 %
 % --------------------------------------------------
 % RESULT = (siehe Abb. 10.4)
-\newcommand{\fref}[1]{(siehe Abb.~\ref{#1})}
+%\newcommand{\fref}[1]{(siehe Abb.~\ref{#1})}
 %
 % RESULT = (siehe Abb. 10.4 b)
-\newcommand{\frefadd}[2]{(siehe Abb.~\ref{#1}~#2)}
+%\newcommand{\frefadd}[2]{(siehe Abb.~\ref{#1}~#2)}
 %
 % RESULT = (siehe Abb. 10.4, Seite 12)
-\newcommand{\figref}[1]{(siehe Abb.~\ref{#1}, Seite~\pageref{#1})}
+%\newcommand{\figref}[1]{(siehe Abb.~\ref{#1}, Seite~\pageref{#1})}
 %
 % RESULT = (siehe Abb. 10.4 b, Seite 12)
-\newcommand{\figrefadd}[2]{(siehe Abb.~\ref{#1}~#2, Seite~\pageref{#1})}
+%\newcommand{\figrefadd}[2]{(siehe Abb.~\ref{#1}~#2, Seite~\pageref{#1})}
 %
 % RESULT = Abbildung 10.4
-\newcommand{\figreft}[1]{Abbildung~\ref{#1}}
+%\newcommand{\figreft}[1]{Abbildung~\ref{#1}}
 %
 % RESULT = Abbildung 10.4 b
-\newcommand{\figrefaddt}[2]{Abbildung~\ref{#1}~#2}
+%\newcommand{\figrefaddt}[2]{Abbildung~\ref{#1}~#2}
 %
 % --------------------------------------------------
 % RESULT = (siehe Seite 12)
@@ -688,6 +695,44 @@
 % requirements of the Hong Kong Polytechnic University.
 % For usage example, see thesis.tex.
 %
+\newcommand{\thesiscoverpage}[2]{%
+  \pdfbookmark[0]{Cover Page}{Cover Page}
+  \label{sec:coverpage}
+  \thispagestyle{empty}
+  \begin{center}
+   
+  \vspace*{3.5cm}
+  \renewcommand{\baselinestretch}{1.0}%
+  \textbf{\LARGE {\MakeUppercase{\thesisTitle}}}
+ 
+ 
+ 
+    \renewcommand{\baselinestretch}{1.0}%
+  \textbf{\LARGE  {\MakeUppercase{\thesisName}}}
+ 
+  
+   \textbf{\LARGE {{#1}}}
+   
+   
+   
+     \renewcommand{\baselinestretch}{3.0}%
+  \textbf{\LARGE {\thesisUniversity}}
+  \vspace{0.5cm}
+  
+ 
+  \textbf{\LARGE {\thesisYear}}
+
+	
+  \end{center}
+  \addtocounter{page}{-1}%Do not include in page count
+
+  \afterpage{\blankpage}
+\pagebreak
+  
+ 
+
+}
+
 \newcommand{\thesistitlepage}[2]{%
   \pdfbookmark[0]{Title Page}{Title Page}
   \label{sec:titlepage}
